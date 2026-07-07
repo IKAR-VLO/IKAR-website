@@ -1,0 +1,181 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import { getCollection } from 'astro:content';
+
+const projects = await getCollection('projects');
+
+const stats = [
+    { value: "3", label: "Active Projects" },
+    { value: "2", label: "Finished Projects" },
+    { value: "20K+ PLN", label: "in Grants" },
+    { value: "2", label: "Schools Active" }
+];
+
+const sponsors = [
+    {
+        name: "V LO im. Ks. Józefa Poniatowskiego w Warszawie",
+        logoText: "Poniatowski High School",
+        description: "The home school of IKAR. Provides classroom lab space for rocket assembly.",
+        link: "http://vlo.edu.pl/"
+    },
+    {
+        name: "CV LO im. Zbigniewa Herberta w Warszawie",
+        logoText: "Herbert High School",
+        description: "One of the schools with an IKAR club.",
+        link: "https://cvlo.waw.pl/"
+    },
+    {
+        name: "Fundacja Poniatowskiego",
+        logoText: "Poniatowski Foundation",
+        description: "Helped fund our initial startup equipment and laboratory supplies in 2023.",
+        link: "https://www.fundacja-poniatowskiego.pl/"
+    },
+    {
+        name: "Centrum Rozwoju Społeczeństwa Obywatelskiego",
+        logoText: "National Liberty Institute",
+        description: "Supported the expansion of our educational PEGaZ rocketry workshops.",
+        link: "http://niw.gov.pl/"
+    },
+    {
+        name: "Wojskowy Instytut Techniczny Uzbrojenia",
+        logoText: "Military Institute of Armament Technology",
+        description: "Grants safe environment access to industrial motor static test benches.",
+        link: "https://witu.mil.pl/"
+    },
+    {
+        name: "Our Future Foundation",
+        logoText: "OFF Foundation",
+        description: "Enabled the PEGaZ projects through the MiniGranty program.",
+        link: "http://off.org.pl/"
+    },
+    {
+        name: "Latawce.pl",
+        logoText: "Latawce",
+        description: "Provided us with off-the-shelf solid rocket motors necessary for the PEGaZ initiative.",
+        link: "https://latawce.pl"
+    },
+    {
+        name: "Poniatnik School Newspaper",
+        logoText: "Poniatnik",
+        description: "The Poniatowski School Newspaper. Promoting IKAR within the Poniatowski community.",
+        link: "http://instagram.com/poniatnik"
+    }
+];
+---
+
+<Layout title="IKAR - High School Science & Rocketry Club">
+    <Header />
+    
+    <main class="flex-grow max-w-7xl w-full mx-auto px-6 py-12 md:px-12 relative">
+
+        <section class="space-y-16 relative z-10">
+            <!-- Hero Introduction Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center pt-4">
+                <div class="lg:col-span-7 space-y-6">
+                    <span class="inline-block text-[10px] bg-black text-electric px-3 py-1 font-bold tracking-widest uppercase font-mono">
+                        > Recruiting New Members
+                    </span>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl tracking-tight text-black leading-[1.1] brand-font">
+                        Exploring Space & Rockets <span class="bg-primary text-electric px-2.5 inline-block">One Launch</span> At A Time.
+                    </h1>
+                    <p class="text-black/80 text-sm md:text-base leading-relaxed max-w-2xl">
+                        We are IKAR, a student-led science club run by high schoolers. Together, we design rocket modules, experiment with electronics, write software, and discover physics in our school lab spaces.
+                    </p>
+                    <div class="flex flex-wrap gap-4 pt-2">
+                        <a href="/join" class="btn-sharp px-8 py-3.5 text-xs inline-block">Join IKAR</a>
+                        <a href="/projects" class="btn-sharp-outline px-8 py-3.5 text-xs inline-block">View Projects</a>
+                    </div>
+                </div>
+                
+                <!-- Telemetry Focus Panel -->
+                <div class="lg:col-span-5 bg-white border-2 border-primary p-8 space-y-6 relative overflow-hidden flex flex-col justify-between min-h-[300px]">
+                    <div class="absolute -right-8 -top-8 w-24 h-24 bg-electric/10 rounded-full border border-dashed border-electric/30"></div>
+                    <div class="space-y-4 font-mono">
+                        <h2 class="text-2xl uppercase text-primary brand-font">Telemetry</h2>
+                        <div class="border-l-2 border-black pl-4 py-2">
+                            <p class="text-[10px] uppercase text-gray-500 font-bold">> ACTIVE PROJECT</p>
+                            <p class="text-sm font-bold text-black uppercase typewriter w-fit">SMoK Rocket</p>
+                        </div>
+                        <div class="border-l-2 border-black pl-4 py-2">
+                            <p class="text-[10px] uppercase text-gray-500 font-bold">> ACTIVE MEMBERS</p>
+                            <p class="text-sm font-bold text-black uppercase">~20 High Schoolers</p>
+                        </div>
+                        <div class="border-l-2 border-primary pl-4 py-2">
+                            <p class="text-[10px] uppercase text-gray-500 font-bold">> CONNECT</p>
+                            <div class="flex space-x-3 mt-1.5">
+                                <a href="https://instagram.com" target="_blank" class="w-8 h-8 bg-primary text-white hover:bg-electric hover:text-black transition-all flex items-center justify-center">
+                                    <i class="fa-brands fa-instagram text-sm"></i>
+                                </a>
+                                <a href="https://facebook.com" target="_blank" class="w-8 h-8 bg-primary text-white hover:bg-electric hover:text-black transition-all flex items-center justify-center">
+                                    <i class="fa-brands fa-facebook-f text-sm"></i>
+                                </a>
+                                <a href="https://linkedin.com" target="_blank" class="w-8 h-8 bg-primary text-white hover:bg-electric hover:text-black transition-all flex items-center justify-center">
+                                    <i class="fa-brands fa-linkedin-in text-sm"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats Counters -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 pt-4">
+                {stats.map(s => (
+                    <div class="bg-white border-2 border-primary p-6 text-center hover:border-electric transition-colors">
+                        <p class="text-3xl md:text-4xl text-primary brand-font">{s.value}</p>
+                        <p class="text-[10px] text-black/60 font-mono uppercase tracking-widest mt-2">> {s.label}</p>
+                    </div>
+                ))}
+            </div>
+
+            <!-- Main Divisions Grid -->
+            <div class="space-y-8 pt-12">
+                <div class="text-center max-w-2xl mx-auto space-y-3">
+                    <h2 class="text-2xl md:text-4xl uppercase text-black brand-font">Featured Projects</h2>
+                    <p class="text-xs uppercase tracking-widest text-black/60 font-mono">> Active deployments</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {projects.slice(0, 3).map(p => (
+                        <ProjectCard 
+                            title={p.data.title}
+                            description={p.data.description}
+                            category={p.data.category}
+                            badge={p.data.badge}
+                            duration={p.data.duration}
+                            status={p.data.status}
+                            lead={p.data.lead}
+                            url={`/projects/${p.slug}`}
+                        />
+                    ))}
+                </div>
+                <div class="text-center mt-8">
+                    <a href="/projects" class="btn-sharp-outline px-8 py-3 text-xs inline-block">View All Projects</a>
+                </div>
+            </div>
+
+            <!-- Sponsors Section -->
+            <div class="space-y-8 pt-12">
+                <div class="text-center max-w-2xl mx-auto space-y-3">
+                    <h2 class="text-2xl md:text-4xl uppercase text-black brand-font">Our Sponsors & Partners</h2>
+                    <p class="text-xs uppercase tracking-widest text-black/60 font-mono">> Mission Control Support</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                    {sponsors.map(s => (
+                        <a href={s.link} target="_blank" rel="noopener noreferrer" class="tech-card p-6 flex flex-col justify-start space-y-4 group">
+                            <div>
+                                <h3 class="text-lg uppercase text-primary group-hover:text-electric transition-colors brand-font">{s.logoText}</h3>
+                                <p class="text-[10px] text-black/60 font-mono pt-1">> {s.name}</p>
+                            </div>
+                            <p class="text-sm text-black leading-relaxed">{s.description}</p>
+                        </a>
+                    ))}
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <Footer />
+</Layout>

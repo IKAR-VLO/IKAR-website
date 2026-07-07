@@ -1,0 +1,38 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  category: string;
+  badge: string;
+  duration: string;
+  status: string;
+  lead: string;
+  url?: string;
+}
+
+const { title, description, category, badge, duration, status, lead, url } = Astro.props;
+
+// Determine status color class
+let dotColor = 'bg-gray-400';
+if (status.toLowerCase() === 'active') dotColor = 'bg-green-500';
+else if (status.toLowerCase() === 'finished') dotColor = 'bg-black';
+else if (status.toLowerCase() === 'on hold') dotColor = 'bg-yellow-500';
+else if (status.toLowerCase() === 'discontinued') dotColor = 'bg-gray-500';
+---
+<a href={url || "#"} class="tech-card p-8 flex flex-col justify-between space-y-6 cursor-pointer block text-left group">
+    <div class="space-y-4">
+        <div class="flex items-center justify-between font-mono">
+            <span class="text-[10px] bg-black text-electric px-2.5 py-1 font-bold tracking-widest uppercase">{badge}</span>
+            <span class="text-[10px] text-black/60 font-semibold uppercase">> {duration}</span>
+        </div>
+        <h3 class="text-xl uppercase text-primary group-hover:text-electric transition-colors brand-font">{title}</h3>
+        <p class="text-sm text-black leading-relaxed line-clamp-3">{description}</p>
+    </div>
+    <div class="border-t-2 border-canvas pt-4 flex justify-between items-center font-mono">
+        <span class="text-[10px] font-bold">{lead}</span>
+        <div class="flex items-center space-x-2">
+            <span class="text-[10px] font-bold uppercase text-gray-500">{status}</span>
+            <span class={`w-2.5 h-2.5 ${dotColor} rounded-full border border-black`} title={`Status: ${status}`}></span>
+        </div>
+    </div>
+</a>

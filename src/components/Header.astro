@@ -1,0 +1,48 @@
+---
+import Logo from './Logo.astro';
+---
+<header class="sticky top-0 z-50 bg-white border-b-4 border-primary px-6 py-4 md:px-12 relative">
+    <div class="max-w-7xl mx-auto flex items-center justify-between relative z-10">
+        <!-- Logo Section -->
+        <a href="/" class="flex items-center space-x-4 group">
+            <Logo className="w-10 h-auto text-primary transition-transform duration-500 group-hover:scale-105" />
+            <div class="flex flex-col">
+                <span class="brand-font text-lg tracking-wider text-primary uppercase leading-none">IKAR</span>
+                <span class="text-[8px] font-bold text-gray-400 uppercase tracking-widest mt-1 leading-none hidden md:inline">Interlicealne Koło Astronautyczno-Rakietowe</span>
+            </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="hidden md:flex items-center space-x-8">
+            <a href="/" class="nav-link border-b-2 border-electric text-primary text-xs font-bold uppercase tracking-wider py-1 hover:text-primary hover:border-primary transition-all">Home</a>
+            <a href="/projects" class="nav-link border-b-2 border-transparent text-black/70 text-xs font-bold uppercase tracking-wider py-1 hover:text-primary hover:border-electric transition-all">Projects</a>
+            <a href="/journal" class="nav-link border-b-2 border-transparent text-black/70 text-xs font-bold uppercase tracking-wider py-1 hover:text-primary hover:border-electric transition-all">Journal</a>
+            <a href="/join" class="btn-sharp text-xs px-5 py-2.5">Join IKAR</a>
+        </nav>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button id="mobile-menu-btn" class="md:hidden text-primary focus:outline-none">
+            <i class="fa-solid fa-bars text-2xl"></i>
+        </button>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu" class="hidden md:hidden mt-4 bg-canvas border-t-2 border-primary pt-4 pb-2 space-y-3 relative z-10">
+        <a href="/" class="block text-xs font-bold uppercase tracking-wider text-black py-2 px-4 hover:bg-primary/5">Home</a>
+        <a href="/projects" class="block text-xs font-bold uppercase tracking-wider text-black py-2 px-4 hover:bg-primary/5">Projects</a>
+        <a href="/journal" class="block text-xs font-bold uppercase tracking-wider text-black py-2 px-4 hover:bg-primary/5">Journal</a>
+        <div class="px-4 pt-2">
+            <a href="/join" class="btn-sharp block text-center text-xs py-2.5 w-full">Join IKAR</a>
+        </div>
+    </div>
+</header>
+
+<script>
+    const btn = document.getElementById('mobile-menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    if (btn && menu) {
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    }
+</script>

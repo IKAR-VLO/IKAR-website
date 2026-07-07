@@ -1,0 +1,48 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map(post => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+---
+
+<Layout title={`${post.data.title} - IKAR Journal`}>
+    <Header />
+    <main class="flex-grow max-w-4xl w-full mx-auto px-6 py-12 md:px-12 relative">
+        <div class="space-y-4 mb-8 pb-8 border-b-2 border-primary">
+            <div class="flex flex-wrap items-center gap-3 font-mono">
+                <span class="text-[10px] bg-primary text-white px-2.5 py-1 font-bold tracking-widest uppercase">> {post.data.category}</span>
+                <span class="text-[10px] text-black/60 font-semibold uppercase">> T-MINUS: {post.data.date}</span>
+                <span class="text-[10px] text-primary font-semibold uppercase">> {post.data.readTime}</span>
+            </div>
+            
+            <h1 class="text-3xl md:text-5xl uppercase text-black font-extrabold brand-font">
+                {post.data.title}
+            </h1>
+
+            <div class="flex items-center gap-3 pt-4 font-mono">
+                <div class="w-8 h-8 bg-black flex items-center justify-center text-white text-xs font-bold">
+                    {post.data.initials}
+                </div>
+                <div>
+                    <span class="text-[10px] block font-bold uppercase tracking-wider text-black">> BY: {post.data.author.toUpperCase()}</span>
+                </div>
+            </div>
+        </div>
+
+        <article class="prose prose-sm md:prose-base max-w-none prose-h1:brand-font prose-h2:brand-font prose-a:text-electric hover:prose-a:text-primary">
+            <Content />
+        </article>
+    </main>
+    <Footer />
+</Layout>

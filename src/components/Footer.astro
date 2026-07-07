@@ -1,0 +1,48 @@
+---
+import Logo from './Logo.astro';
+---
+<footer class="bg-black border-t-4 border-primary px-6 py-12 md:px-12 text-canvas mt-auto relative">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 items-start relative z-10">
+        <!-- Brand block -->
+        <div class="md:col-span-8 space-y-4">
+            <div class="flex items-center space-x-3 text-white">
+                <span class="brand-font text-lg tracking-wider text-electric uppercase">IKAR</span>
+            </div>
+            <p class="text-xs text-canvas max-w-sm leading-relaxed font-mono">
+                > An inter-school science club helping high school students construct rocket modeling projects.
+            </p>
+            <!-- Dynamic Footer Social handles -->
+            <div class="flex space-x-4 pt-2">
+                <a href="https://instagram.com" target="_blank" class="w-8 h-8 bg-primary border border-white text-white hover:bg-electric hover:text-black transition-all flex items-center justify-center">
+                    <i class="fa-brands fa-instagram text-sm"></i>
+                </a>
+                <a href="https://facebook.com" target="_blank" class="w-8 h-8 bg-primary border border-white text-white hover:bg-electric hover:text-black transition-all flex items-center justify-center">
+                    <i class="fa-brands fa-facebook-f text-sm"></i>
+                </a>
+                <a href="https://linkedin.com" target="_blank" class="w-8 h-8 bg-primary border border-white text-white hover:bg-electric hover:text-black transition-all flex items-center justify-center">
+                    <i class="fa-brands fa-linkedin-in text-sm"></i>
+                </a>
+            </div>
+            <div class="text-[10px] text-gray-400 font-mono mt-4">
+                > ESTABLISHED 2023 // WAW // PL
+            </div>
+        </div>
+
+        <!-- Links navigation column -->
+        <div class="md:col-span-4 space-y-4">
+            <h4 class="text-xs font-mono font-extrabold uppercase tracking-widest text-electric">> Explore Sites</h4>
+            <ul class="space-y-3 text-xs font-mono text-canvas">
+                <li><a href="/projects" class="hover:text-electric transition-colors">Active Projects</a></li>
+                <li><a href="/journal" class="hover:text-electric transition-colors">Journal Logs</a></li>
+                <li><a href="/join" class="hover:text-electric transition-colors">Join Us</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Copyright banner ribbon -->
+    <div class="bg-black py-4 px-6 text-center border-t border-primary mt-12">
+        <p class="text-[10px] tracking-widest text-canvas uppercase font-mono">
+            &copy; {new Date().getFullYear()} IKAR. All rights reserved.
+        </p>
+    </div>
+</footer>

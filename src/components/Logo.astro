@@ -1,0 +1,28 @@
+---
+import fs from 'node:fs';
+import path from 'node:path';
+
+interface Props {
+  className?: string;
+}
+
+const { className = "w-10 h-auto text-primary" } = Astro.props;
+
+// Read the SVG content dynamically from the new logo file
+const filePath = path.resolve(process.cwd(), 'src/assets/logo.svg');
+let svgContent = '';
+
+try {
+  svgContent = fs.readFileSync(filePath, 'utf-8');
+  
+  // Replace the hardcoded classes with the passed className
+  // We add the class to the root <svg> tag and change styles to currentColor for dynamic coloring
+  svgContent = svgContent.replace('<svg ', `<svg class="${className}" `);
+  svgContent = svgContent.replace(/style="fill:#000"/g, 'fill="currentColor"');
+  svgContent = svgContent.replace(/fill:#000/g, 'currentColor');
+  svgContent = svgContent.replace(/fill="#000"/g, 'fill="currentColor"');
+} catch (e) {
+  console.error("Failed to load SVG logo", e);
+}
+---
+<Fragment set:html={svgContent} />

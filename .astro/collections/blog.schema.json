@@ -1,0 +1,41 @@
+{
+  "$ref": "#/definitions/blog",
+  "definitions": {
+    "blog": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "category": {
+          "type": "string"
+        },
+        "date": {
+          "type": "string"
+        },
+        "readTime": {
+          "type": "string"
+        },
+        "author": {
+          "type": "string"
+        },
+        "initials": {
+          "type": "string"
+        },
+        "$schema": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "title",
+        "category",
+        "date",
+        "readTime",
+        "author",
+        "initials"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: 'Inter', sans-serif;
+    background-color: theme('colors.canvas');
+    color: theme('colors.black');
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6, .brand-font {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+  }
+}
+
+@layer components {
+  .sharp-card {
+    @apply bg-white border-2 border-primary transition-all duration-200 ease-in-out;
+  }
+
+  .sharp-card:hover {
+    transform: translate(-4px, -4px);
+    box-shadow: 4px 4px 0px 0px theme('colors.primary');
+  }
+
+  .tech-card {
+    @apply bg-white border-2 border-primary transition-all duration-200 ease-in-out block;
+  }
+
+  .tech-card:hover {
+    transform: translate(-4px, -4px);
+    box-shadow: 4px 4px 0px 0px theme('colors.primary');
+  }
+
+  .btn-sharp {
+    @apply border-2 border-primary bg-primary text-white rounded-none font-semibold transition-all duration-150 ease-in-out uppercase tracking-wider;
+  }
+
+  .btn-sharp:hover {
+    @apply bg-white text-primary;
+    box-shadow: 3px 3px 0px 0px theme('colors.electric');
+    transform: translate(-2px, -2px);
+  }
+
+  .btn-sharp-outline {
+    @apply border-2 border-primary bg-transparent text-primary rounded-none font-semibold transition-all duration-150 ease-in-out uppercase tracking-wider;
+  }
+
+  .btn-sharp-outline:hover {
+    @apply bg-primary text-white;
+    transform: translate(-2px, -2px);
+  }
+
+  /* Blueprint schematic overlay */
+  .grid-blueprint {
+    background-image: linear-gradient(rgba(14, 42, 87, 0.05) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(14, 42, 87, 0.05) 1px, transparent 1px);
+    background-size: 30px 30px;
+  }
+  
+  /* Telemetry typewriter effect */
+  .typewriter {
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid theme('colors.electric');
+    animation: typing 2s steps(40, end), blink-caret .75s step-end infinite;
+  }
+
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: theme('colors.electric'); }
+  }
+}

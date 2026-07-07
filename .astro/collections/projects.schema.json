@@ -1,0 +1,51 @@
+{
+  "$ref": "#/definitions/projects",
+  "definitions": {
+    "projects": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "category": {
+          "type": "string"
+        },
+        "badge": {
+          "type": "string"
+        },
+        "duration": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "lead": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "active",
+            "finished",
+            "on hold",
+            "discontinued"
+          ]
+        },
+        "$schema": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "title",
+        "category",
+        "badge",
+        "duration",
+        "description",
+        "lead",
+        "status"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}
