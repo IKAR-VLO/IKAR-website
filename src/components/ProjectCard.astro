@@ -13,11 +13,8 @@ interface Props {
 const { title, description, category, badge, duration, status, lead, url } = Astro.props;
 
 // Determine status color class
-let dotColor = 'bg-gray-400';
-if (status.toLowerCase() === 'active') dotColor = 'bg-green-500';
-else if (status.toLowerCase() === 'finished') dotColor = 'bg-black';
-else if (status.toLowerCase() === 'on hold') dotColor = 'bg-yellow-500';
-else if (status.toLowerCase() === 'discontinued') dotColor = 'bg-gray-500';
+const statusColors: Record<string, string> = { active: 'bg-green-500', finished: 'bg-black', 'on hold': 'bg-yellow-500', discontinued: 'bg-gray-500' };
+const dotColor = statusColors[status.toLowerCase()] || 'bg-gray-400';
 ---
 <a href={url || "#"} class="tech-card p-8 flex flex-col justify-between space-y-6 cursor-pointer block text-left group">
     <div class="space-y-4">

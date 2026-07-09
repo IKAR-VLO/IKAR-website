@@ -1,7 +1,5 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
 import PostCard from '../components/PostCard.astro';
 import { getCollection } from 'astro:content';
 
@@ -9,7 +7,6 @@ const posts = await getCollection('blog');
 ---
 
 <Layout title="IKAR Journal - Logs">
-    <Header />
     <main class="flex-grow max-w-7xl w-full mx-auto px-6 py-12 md:px-12">
         <div class="space-y-4 mb-12 border-b-2 border-primary/20 pb-8">
             <h1 class="text-3xl md:text-5xl uppercase tracking-tight text-primary brand-font">Mission Logs</h1>
@@ -33,5 +30,4 @@ const posts = await getCollection('blog');
             ))}
         </div>
     </main>
-    <Footer />
 </Layout>

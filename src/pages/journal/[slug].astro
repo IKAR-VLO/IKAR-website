@@ -1,8 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
-import Header from '../../components/Header.astro';
-import Footer from '../../components/Footer.astro';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
@@ -17,12 +15,11 @@ const { Content } = await post.render();
 ---
 
 <Layout title={`${post.data.title} - IKAR Journal`}>
-    <Header />
     <main class="flex-grow max-w-4xl w-full mx-auto px-6 py-12 md:px-12 relative">
         <div class="space-y-4 mb-8 pb-8 border-b-2 border-primary">
             <div class="flex flex-wrap items-center gap-3 font-mono">
                 <span class="text-[10px] bg-primary text-white px-2.5 py-1 font-bold tracking-widest uppercase">> {post.data.category}</span>
-                <span class="text-[10px] text-black/60 font-semibold uppercase">> T-MINUS: {post.data.date}</span>
+                <span class="text-[10px] text-black/60 font-semibold uppercase">> Published: {post.data.date}</span>
                 <span class="text-[10px] text-primary font-semibold uppercase">> {post.data.readTime}</span>
             </div>
             
@@ -40,9 +37,8 @@ const { Content } = await post.render();
             </div>
         </div>
 
-        <article class="prose prose-sm md:prose-base max-w-none prose-h1:brand-font prose-h2:brand-font prose-a:text-electric hover:prose-a:text-primary">
+        <article class="prose prose-sm md:prose-base max-w-none text-justify prose-p:text-black prose-li:text-black prose-h1:brand-font prose-h1:text-black prose-h2:brand-font prose-h2:text-black prose-h3:text-black prose-strong:text-black prose-a:text-electric hover:prose-a:text-primary">
             <Content />
         </article>
     </main>
-    <Footer />
 </Layout>

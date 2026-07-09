@@ -1,5 +1,18 @@
 ---
 import Logo from './Logo.astro';
+
+const pathname = Astro.url.pathname;
+
+const navLinks = [
+    { name: 'Home', href: '/' },
+    { name: 'Projects', href: '/projects' },
+    { name: 'Journal', href: '/journal' }
+];
+
+const isActive = (href: string) => {
+    if (href === '/') return pathname === '/';
+    return pathname.startsWith(href);
+};
 ---
 <header class="sticky top-0 z-50 bg-white border-b-4 border-primary px-6 py-4 md:px-12 relative">
     <div class="max-w-7xl mx-auto flex items-center justify-between relative z-10">
@@ -14,9 +27,18 @@ import Logo from './Logo.astro';
 
         <!-- Desktop Navigation Links -->
         <nav class="hidden md:flex items-center space-x-8">
-            <a href="/" class="nav-link border-b-2 border-electric text-primary text-xs font-bold uppercase tracking-wider py-1 hover:text-primary hover:border-primary transition-all">Home</a>
-            <a href="/projects" class="nav-link border-b-2 border-transparent text-black/70 text-xs font-bold uppercase tracking-wider py-1 hover:text-primary hover:border-electric transition-all">Projects</a>
-            <a href="/journal" class="nav-link border-b-2 border-transparent text-black/70 text-xs font-bold uppercase tracking-wider py-1 hover:text-primary hover:border-electric transition-all">Journal</a>
+            {navLinks.map(link => (
+                <a 
+                    href={link.href} 
+                    class={`nav-link border-b-2 text-xs font-bold uppercase tracking-wider py-1 transition-all ${
+                        isActive(link.href) 
+                        ? 'border-electric text-primary' 
+                        : 'border-transparent text-black/70 hover:text-primary hover:border-electric'
+                    }`}
+                >
+                    {link.name}
+                </a>
+            ))}
             <a href="/join" class="btn-sharp text-xs px-5 py-2.5">Join IKAR</a>
         </nav>
 
@@ -28,9 +50,16 @@ import Logo from './Logo.astro';
 
     <!-- Mobile Navigation Drawer -->
     <div id="mobile-menu" class="hidden md:hidden mt-4 bg-canvas border-t-2 border-primary pt-4 pb-2 space-y-3 relative z-10">
-        <a href="/" class="block text-xs font-bold uppercase tracking-wider text-black py-2 px-4 hover:bg-primary/5">Home</a>
-        <a href="/projects" class="block text-xs font-bold uppercase tracking-wider text-black py-2 px-4 hover:bg-primary/5">Projects</a>
-        <a href="/journal" class="block text-xs font-bold uppercase tracking-wider text-black py-2 px-4 hover:bg-primary/5">Journal</a>
+        {navLinks.map(link => (
+            <a 
+                href={link.href} 
+                class={`block text-xs font-bold uppercase tracking-wider py-2 px-4 hover:bg-primary/5 ${
+                    isActive(link.href) ? 'text-primary bg-primary/5' : 'text-black'
+                }`}
+            >
+                {link.name}
+            </a>
+        ))}
         <div class="px-4 pt-2">
             <a href="/join" class="btn-sharp block text-center text-xs py-2.5 w-full">Join IKAR</a>
         </div>

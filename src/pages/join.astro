@@ -1,0 +1,55 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Join IKAR">
+    <main class="flex-grow max-w-7xl w-full mx-auto px-6 py-12 md:px-12">
+        <section class="space-y-12 mt-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                <div class="lg:col-span-7 space-y-6">
+                    <span class="inline-block text-[10px] bg-black text-electric px-3 py-1 font-extrabold tracking-widest uppercase">
+                        JOIN IKAR
+                    </span>
+                    <h1 class="text-3xl md:text-5xl uppercase tracking-tight text-black leading-none brand-font">
+                        Get Involved
+                    </h1>
+                    <p class="text-black/80 text-sm md:text-base leading-relaxed">
+                        Are you a high school student interested in space science, amateur rocketry, electronics, or physics? IKAR is a great space to build real models, run hardware, write code, and learn with active teammates.
+                    </p>
+                    
+                    <!-- Easy Contact Call-To-Action Box -->
+                    <div class="border-l-4 border-primary pl-6 py-4 space-y-3 bg-white border-t border-r border-b border-primary/10 p-4">
+                        <h3 class="text-lg uppercase font-bold text-primary brand-font">How to Apply</h3>
+                        <p class="text-sm text-black leading-relaxed">
+                            We don't have boring entry tests. Just write us a friendly email with your name, school, class grade, and what you would like to work on!
+                        </p>
+                        <div class="pt-2">
+                            <a href="mailto:kontakt@ikar.sk" class="btn-sharp inline-block px-6 py-3 text-xs tracking-wider">
+                                <i class="fa-solid fa-paper-plane mr-2"></i> Send Us an Email
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Membership requirements -->
+                <div class="lg:col-span-5 bg-white border-4 border-primary p-8 space-y-6">
+                    <h3 class="text-xl uppercase text-primary brand-font">Membership Criteria</h3>
+                    <ul class="space-y-4 text-xs font-semibold uppercase tracking-wider text-black">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-chevron-right text-electric mt-0.5"></i>
+                            <span>Must be an active High School student</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-chevron-right text-electric mt-0.5"></i>
+                            <span>Willingness to learn and collaborate with others</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-chevron-right text-electric mt-0.5"></i>
+                            <span>Interest in space, chemistry, coding, or modeling</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+</Layout>

@@ -1,7 +1,5 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
 import ProjectCard from '../components/ProjectCard.astro';
 import { getCollection } from 'astro:content';
 
@@ -67,7 +65,6 @@ const sponsors = [
 ---
 
 <Layout title="IKAR - High School Science & Rocketry Club">
-    <Header />
     
     <main class="flex-grow max-w-7xl w-full mx-auto px-6 py-12 md:px-12 relative">
 
@@ -79,25 +76,25 @@ const sponsors = [
                         > Recruiting New Members
                     </span>
                     <h1 class="text-4xl md:text-5xl lg:text-6xl tracking-tight text-black leading-[1.1] brand-font">
-                        Exploring Space & Rockets <span class="bg-primary text-electric px-2.5 inline-block">One Launch</span> At A Time.
+                        A rocketry club <span class="bg-primary text-electric px-2.5 inline-block">for high schoolers</span> run <span class="bg-primary text-electric px-2.5 inline-block">by high schoolers</span>
                     </h1>
                     <p class="text-black/80 text-sm md:text-base leading-relaxed max-w-2xl">
-                        We are IKAR, a student-led science club run by high schoolers. Together, we design rocket modules, experiment with electronics, write software, and discover physics in our school lab spaces.
+                        We are IKAR (Interlicealne Koło Astronautyczno-Rakietowe), a student-led science club run by high schoolers. Together, we design rocket modules, experiment with electronics, write software, and discover physics in our school lab spaces.
                     </p>
                     <div class="flex flex-wrap gap-4 pt-2">
-                        <a href="/join" class="btn-sharp px-8 py-3.5 text-xs inline-block">Join IKAR</a>
+                        <a href="/journal" class="btn-sharp px-8 py-3.5 text-xs inline-block">See our blog</a>
                         <a href="/projects" class="btn-sharp-outline px-8 py-3.5 text-xs inline-block">View Projects</a>
                     </div>
                 </div>
                 
                 <!-- Telemetry Focus Panel -->
                 <div class="lg:col-span-5 bg-white border-2 border-primary p-8 space-y-6 relative overflow-hidden flex flex-col justify-between min-h-[300px]">
-                    <div class="absolute -right-8 -top-8 w-24 h-24 bg-electric/10 rounded-full border border-dashed border-electric/30"></div>
+
                     <div class="space-y-4 font-mono">
                         <h2 class="text-2xl uppercase text-primary brand-font">Telemetry</h2>
                         <div class="border-l-2 border-black pl-4 py-2">
                             <p class="text-[10px] uppercase text-gray-500 font-bold">> ACTIVE PROJECT</p>
-                            <p class="text-sm font-bold text-black uppercase typewriter w-fit">SMoK Rocket</p>
+                            <p class="text-sm font-bold text-black uppercase">SMoK Rocket</p>
                         </div>
                         <div class="border-l-2 border-black pl-4 py-2">
                             <p class="text-[10px] uppercase text-gray-500 font-bold">> ACTIVE MEMBERS</p>
@@ -176,6 +173,4 @@ const sponsors = [
             </div>
         </section>
     </main>
-
-    <Footer />
 </Layout>
