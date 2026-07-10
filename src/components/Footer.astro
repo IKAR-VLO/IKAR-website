@@ -1,27 +1,30 @@
 ---
 import Logo from './Logo.astro';
 ---
-<footer class="bg-black border-t-4 border-primary px-6 py-12 md:px-12 text-canvas mt-auto relative">
-    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 items-start relative z-10">
+<footer class="bg-black border-t-4 border-primary px-6 py-8 md:py-12 md:px-12 text-canvas mt-auto relative">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 items-center md:items-start relative z-10">
         <!-- Brand block -->
-        <div class="md:col-span-8 space-y-4">
-            <div class="flex items-center space-x-3 text-white">
+        <div class="md:col-span-8 space-y-4 text-center md:text-left">
+            <div class="flex justify-center md:justify-start items-center space-x-3 text-white">
                 <span class="brand-font text-lg tracking-wider text-electric uppercase">IKAR</span>
             </div>
-            <p class="text-xs text-canvas max-w-sm leading-relaxed font-mono">
+            <p class="text-xs text-canvas max-w-sm mx-auto md:mx-0 leading-relaxed font-mono">
                 > An inter-school science club helping high school students construct rocket modeling projects.
                 <br><br>
-                <b>> INFO: This is a beta version of our new website. If you want to visit the old website instead, visit </b><a href="https://ikarkolo.wixsite.com/drugastronaikar" target="_blank" rel="noopener noreferrer" class="hover:text-electric underline transition-colors"><b>this link</b></a>.
+                <b>> INFO:</b> This is a beta version of our new website. If you want to visit the old website instead, visit </b><a href="https://ikarkolo.wixsite.com/drugastronaikar" target="_blank" rel="noopener noreferrer" class="hover:text-electric underline transition-colors"><b>this link</b></a>.
             </p>
             <!-- Dynamic Footer Social handles -->
-            <div class="flex space-x-4 pt-2">
-                <a href="https://instagram.com" target="_blank" class="w-8 h-8 bg-primary border border-white text-white hover:bg-electric hover:text-black transition-all flex items-center justify-center">
+            <div class="flex justify-center md:justify-start space-x-4 pt-2">
+                <a href="mailto:ikar.kolo@gmail.com" class="w-8 h-8 bg-primary border border-white text-white hover:bg-electric hover:text-black transition-all flex items-center justify-center">
+                    <i class="fa-solid fa-envelope text-sm"></i>
+                </a>
+                <a href="https://instagram.com/ikar_kolo_vlo" target="_blank" class="w-8 h-8 bg-primary border border-white text-white hover:bg-electric hover:text-black transition-all flex items-center justify-center">
                     <i class="fa-brands fa-instagram text-sm"></i>
                 </a>
-                <a href="https://facebook.com" target="_blank" class="w-8 h-8 bg-primary border border-white text-white hover:bg-electric hover:text-black transition-all flex items-center justify-center">
-                    <i class="fa-brands fa-facebook-f text-sm"></i>
+                <a href="https://instagram.com/ikar_kolo_cvlo" target="_blank" class="w-8 h-8 bg-primary border border-white text-white hover:bg-electric hover:text-black transition-all flex items-center justify-center">
+                    <i class="fa-brands fa-instagram text-sm"></i>
                 </a>
-                <a href="https://linkedin.com" target="_blank" class="w-8 h-8 bg-primary border border-white text-white hover:bg-electric hover:text-black transition-all flex items-center justify-center">
+                <a href="https://linkedin.com/company/ikar-kolo" target="_blank" class="w-8 h-8 bg-primary border border-white text-white hover:bg-electric hover:text-black transition-all flex items-center justify-center">
                     <i class="fa-brands fa-linkedin-in text-sm"></i>
                 </a>
             </div>
@@ -31,7 +34,7 @@ import Logo from './Logo.astro';
         </div>
 
         <!-- Links navigation column -->
-        <div class="md:col-span-4 space-y-4">
+        <div class="md:col-span-4 space-y-4 text-center md:text-left mt-4 md:mt-0">
             <h4 class="text-xs font-mono font-extrabold uppercase tracking-widest text-electric">> Explore Sites</h4>
             <ul class="space-y-3 text-xs font-mono text-canvas">
                 <li><a href="/projects" class="hover:text-electric transition-colors">Active Projects</a></li>
@@ -42,7 +45,7 @@ import Logo from './Logo.astro';
     </div>
 
     <!-- Copyright banner ribbon -->
-    <div class="bg-black py-4 px-6 text-center border-t border-primary mt-12">
+    <div class="bg-black py-4 px-6 text-center border-t border-primary mt-8 md:mt-12">
         <p class="text-[10px] tracking-widest text-canvas uppercase font-mono">
             &copy; {new Date().getFullYear()} IKAR. All rights reserved.
         </p>

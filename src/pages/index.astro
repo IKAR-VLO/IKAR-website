@@ -72,9 +72,7 @@ const sponsors = [
             <!-- Hero Introduction Grid -->
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center pt-4">
                 <div class="lg:col-span-7 space-y-6">
-                    <span class="inline-block text-[10px] bg-black text-electric px-3 py-1 font-bold tracking-widest uppercase font-mono">
-                        > Recruiting New Members
-                    </span>
+
                     <h1 class="text-4xl md:text-5xl lg:text-6xl tracking-tight text-black leading-[1.1] brand-font">
                         A rocketry club <span class="bg-primary text-electric px-2.5 inline-block">for high schoolers</span> run <span class="bg-primary text-electric px-2.5 inline-block">by high schoolers</span>
                     </h1>
@@ -106,13 +104,16 @@ const sponsors = [
                         <div class="border-l-2 border-primary pl-4 py-2">
                             <p class="text-[10px] uppercase text-gray-500 font-bold">> CONNECT</p>
                             <div class="flex space-x-3 mt-1.5">
-                                <a href="https://instagram.com" target="_blank" class="w-8 h-8 bg-primary text-white hover:bg-electric hover:text-black transition-all flex items-center justify-center">
+                                <a href="mailto:ikar.kolo@gmail.com" class="w-8 h-8 bg-primary text-white hover:bg-electric hover:text-black transition-all flex items-center justify-center">
+                                    <i class="fa-solid fa-envelope text-sm"></i>
+                                </a>
+                                <a href="https://instagram.com/ikar_kolo_vlo" target="_blank" class="w-8 h-8 bg-primary text-white hover:bg-electric hover:text-black transition-all flex items-center justify-center">
                                     <i class="fa-brands fa-instagram text-sm"></i>
                                 </a>
-                                <a href="https://facebook.com" target="_blank" class="w-8 h-8 bg-primary text-white hover:bg-electric hover:text-black transition-all flex items-center justify-center">
-                                    <i class="fa-brands fa-facebook-f text-sm"></i>
+                                <a href="https://instagram.com/ikar_kolo_cvlo" target="_blank" class="w-8 h-8 bg-primary text-white hover:bg-electric hover:text-black transition-all flex items-center justify-center">
+                                    <i class="fa-brands fa-instagram text-sm"></i>
                                 </a>
-                                <a href="https://linkedin.com" target="_blank" class="w-8 h-8 bg-primary text-white hover:bg-electric hover:text-black transition-all flex items-center justify-center">
+                                <a href="https://linkedin.com/company/ikar-kolo" target="_blank" class="w-8 h-8 bg-primary text-white hover:bg-electric hover:text-black transition-all flex items-center justify-center">
                                     <i class="fa-brands fa-linkedin-in text-sm"></i>
                                 </a>
                             </div>
@@ -135,7 +136,6 @@ const sponsors = [
             <div class="space-y-8 pt-12">
                 <div class="text-center max-w-2xl mx-auto space-y-3">
                     <h2 class="text-2xl md:text-4xl uppercase text-black brand-font">Featured Projects</h2>
-                    <p class="text-xs uppercase tracking-widest text-black/60 font-mono">> Active deployments</p>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {projects.slice(0, 3).map(p => (
@@ -160,7 +160,6 @@ const sponsors = [
             <div class="space-y-8 pt-12">
                 <div class="text-center max-w-2xl mx-auto space-y-3">
                     <h2 class="text-2xl md:text-4xl uppercase text-black brand-font">Our Sponsors & Partners</h2>
-                    <p class="text-xs uppercase tracking-widest text-black/60 font-mono">> Mission Control Support</p>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                     {sponsors.map(s => (

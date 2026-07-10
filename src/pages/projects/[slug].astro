@@ -1,0 +1,28 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  const projects = await getCollection('projects');
+  return projects.map(project => ({
+    params: { slug: project.slug },
+    props: { project },
+  }));
+}
+
+const { project } = Astro.props;
+---
+
+<Layout title={`${project.data.title} - IKAR Projects`}>
+    <main class="flex-grow max-w-4xl w-full mx-auto px-6 py-24 md:px-12 relative text-center">
+        <div class="space-y-6">
+            <h1 class="text-4xl md:text-5xl uppercase text-black font-extrabold brand-font">
+                <br>Page Under Construction
+            </h1>
+            <p class="text-base text-black/80 max-w-2xl mx-auto">
+                <i>Detailed descriptions for our projects are currently being built. 
+                <br>In the meantime, you can read more about our work on our <a href="/journal" class="underline hover:text-electric transition-colors"><b>journal</b></a> or, for more details, visit the <a href="https://ikarkolo.wixsite.com/drugastronaikar" target="_blank" rel="noopener noreferrer" class="underline hover:text-electric transition-colors"><b>old version of our website</b></a>.</i><br>
+            </p>
+        </div>
+    </main>
+</Layout>
